@@ -16,7 +16,8 @@ class NginxConfig
     logging: {
       "access" => true,
       "error" => "error"
-    }
+    },
+    max_body_size: "5M",
   }
 
   def initialize(json_file)
@@ -50,6 +51,7 @@ class NginxConfig
 
     json["clean_urls"] ||= DEFAULT[:clean_urls]
     json["https_only"] ||= DEFAULT[:https_only]
+    json["max_body_size"] ||= DEFAULT[:max_body_size]
 
     json["basic_auth"] = true unless ENV['BASIC_AUTH_USERNAME'].nil?
     json["basic_auth"] ||= DEFAULT[:basic_auth]
