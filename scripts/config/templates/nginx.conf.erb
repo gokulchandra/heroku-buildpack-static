@@ -36,6 +36,7 @@ http {
 
   #Must read the body in 5 seconds.
   client_body_timeout 5;
+  client_max_body_size <%= max_body_size %>;
 
   server {
     listen <%= port %> reuseport;
