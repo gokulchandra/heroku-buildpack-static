@@ -17,7 +17,7 @@ class NginxConfig
       "access" => true,
       "error" => "error"
     },
-    max_body_size: "5M",
+    max_body_size: "5m",
   }
 
   def initialize(json_file)
